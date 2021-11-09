@@ -4,3 +4,5 @@ An automatic password generator that will create a password to meet your criteri
 
 Password must have a required length of at least 1 character.
 User must choose at least 1 criteria for characters.
+
+https://mkang987.github.io/password-generator/
