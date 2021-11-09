@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-   // var password = generatePassword();
+
   var passwordText = document.querySelector("#password");
   var charList = [];
   
@@ -17,24 +17,24 @@ function writePassword() {
     charList.push("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
   }
   
-  var numbers = window.confirm("Include numbers?");
+  var numbers = window.confirm("Include numbers?"); //add numbers to array if true
   if(numbers) {
     charList.push("1","2","3","4","5","6","7","8","9","0");
   }
 
-  var symbols = window.confirm("Include special characters?")
+  var symbols = window.confirm("Include special characters?") //add symbols to array if true
   if(symbols) {
     charList.push("!","@","#","$","%","^","&","*","(",")","[","]","{","}",";","'",",",".","/","<",">","?");
   }
 
-  var length = window.prompt("Length of password?");
+  var length = Number(window.prompt("Length of password?")); //Gets the number of characters the password needs to be
 
-  console.log(charList);
+  var newPass = []; //creates new array for password
 
-  var newPass = [];
 
-  if(length == 0 || length == instanceof String) {
-    passwordText.value = "Invalid length or please select a character length of at least 1";
+  //Makes sure a valid length and enough criteria are chosen for a proper password
+  if(length == 0 || Number.isNaN(length)) {
+    passwordText.value = "Invalid length, please select a character length of at least 1";
   } else if (charList.length < 2) {
     passwordText.value = "Please select at least 1 criteria";
   } else {
@@ -44,7 +44,7 @@ function writePassword() {
     newPass.push(charList[random]);
 
     }
-
+  
   passwordText.value = newPass.join("");; //After running command this will show password on screen.
   }
 }
