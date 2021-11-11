@@ -33,8 +33,8 @@ function writePassword() {
 
 
   //Makes sure a valid length and enough criteria are chosen for a proper password
-  if(length == 0 || Number.isNaN(length)) {
-    passwordText.value = "Invalid length, please select a character length of at least 1";
+  if(length < 8 || length > 128 || Number.isNaN(length)) {
+    passwordText.value = "Invalid length, Character length must be between 8 and 128 characters long.";
   } else if (charList.length < 2) {
     passwordText.value = "Please select at least 1 criteria";
   } else {
@@ -45,7 +45,7 @@ function writePassword() {
 
     }
   
-  passwordText.value = newPass.join("");; //After running command this will show password on screen.
+  passwordText.value = newPass.join("");; //After running function this will show password on screen. removing , from array.
   }
 }
 
